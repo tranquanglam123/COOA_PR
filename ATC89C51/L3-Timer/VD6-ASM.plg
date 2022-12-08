@@ -1,0 +1,111 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\CCLaptop\Documents\COOA-PR\ATC89C51\L3-Timer\VD4.uvproj
+Project File Date:  11/16/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+..\L5-UART\serial_MCU_PC_temp.c(2): error C141: syntax error near ','
+..\L5-UART\serial_MCU_PC_temp.c(13): error C132: 'using1': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(13): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(15): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(15): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(16): error C244: 'rdata': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(16): error C132: 'rdata': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(17): error C244: 'RI': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(17): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(18): error C141: syntax error near 'switch'
+..\L5-UART\serial_MCU_PC_temp.c(19): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+..\L5-UART\serial_MCU_PC_temp.c(2): error C141: syntax error near ','
+..\L5-UART\serial_MCU_PC_temp.c(13): error C132: 'using1': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(13): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(15): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(15): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(16): error C244: 'rdata': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(16): error C132: 'rdata': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(17): error C244: 'RI': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(17): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(18): error C141: syntax error near 'switch'
+..\L5-UART\serial_MCU_PC_temp.c(18): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+..\L5-UART\serial_MCU_PC_temp.c(2): error C141: syntax error near ','
+..\L5-UART\serial_MCU_PC_temp.c(13): error C132: 'using1': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(13): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(14): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(14): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(15): error C244: 'rdata': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(15): error C132: 'rdata': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(16): error C244: 'RI': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(16): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(17): error C141: syntax error near 'switch'
+..\L5-UART\serial_MCU_PC_temp.c(17): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+..\L5-UART\serial_MCU_PC_temp.c(2): error C141: syntax error near ','
+..\L5-UART\serial_MCU_PC_temp.c(13): error C132: 'using1': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(13): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(14): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(14): error C141: syntax error near '{'
+..\L5-UART\serial_MCU_PC_temp.c(14): error C244: 'rdata': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(14): error C132: 'rdata': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(15): error C244: 'RI': can't initialize, bad type or class
+..\L5-UART\serial_MCU_PC_temp.c(15): error C132: 'RI': not in formal parameter list
+..\L5-UART\serial_MCU_PC_temp.c(16): error C141: syntax error near 'switch'
+..\L5-UART\serial_MCU_PC_temp.c(16): error C129: missing ';' before '{'
+Target not created
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+..\L5-UART\serial_MCU_PC_temp.c(2): error C141: syntax error near ','
+Target not created
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "serial_MCU_PC_temp"...
+"serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "..\L5-UART\serial_MCU_PC_temp"...
+"..\L5-UART\serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "..\L5-UART\serial_MCU_PC_temp"...
+"..\L5-UART\serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "..\L5-UART\serial_MCU_PC_temp"...
+"..\L5-UART\serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "..\L5-UART\serial_MCU_PC_temp"...
+"..\L5-UART\serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "..\L5-UART\serial_MCU_PC_temp"...
+"..\L5-UART\serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling serial_MCU_PC_temp.c...
+linking...
+Program Size: data=13.0 xdata=0 code=142
+creating hex file from "..\L5-UART\serial_MCU_PC_temp"...
+"..\L5-UART\serial_MCU_PC_temp" - 0 Error(s), 0 Warning(s).

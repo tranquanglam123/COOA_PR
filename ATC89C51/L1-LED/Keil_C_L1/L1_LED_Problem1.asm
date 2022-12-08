@@ -1,0 +1,16 @@
+org 1000h
+mov p0, #01010101B
+MAIN: MOV R6,#5D
+LOOP: ACALL DELAY
+      DJNZ R6,LOOP
+      SJMP MAIN
+ 
+DELAY: MOV TMOD,#00000001B 
+       MOV TH0,#03CH
+       MOV TL0,#0B0H 
+       SETB TR0 
+HERE: JNB TF0,HERE 
+		RR P0
+      CLR TR0 
+      CLR TF0 
+      RET

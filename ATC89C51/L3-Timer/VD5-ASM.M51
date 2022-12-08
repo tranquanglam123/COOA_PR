@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/09/2022  14:18:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE VD6.obj TO VD5-ASM
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  VD6.obj (VD6)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  VD5-ASM (VD6)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0018H     UNIT         ?PR?DELAY_HARDWARE_50MS?VD6
+            CODE    0818H     0012H     UNIT         ?PR?DELAY_HARDWARE_1S?VD6
+            CODE    082AH     000EH     UNIT         ?PR?MAIN?VD6
+            CODE    0838H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   VD5-ASM (VD6)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?VD6
+
+?PR?MAIN?VD6
+  +--> ?PR?DELAY_HARDWARE_1S?VD6
+
+?PR?DELAY_HARDWARE_1S?VD6
+  +--> ?PR?DELAY_HARDWARE_50MS?VD6
+
+
+
+SYMBOL TABLE OF MODULE:  VD5-ASM (VD6)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        VD6
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:082AH         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/09/2022  14:18:13  PAGE 2
+
+
+  D:0089H         PUBLIC        TMOD
+  B:00A8H.1       PUBLIC        ET0
+  B:0088H.5       PUBLIC        TF0
+  C:0818H         PUBLIC        delay_hardware_1s
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  C:0800H         PUBLIC        delay_hardware_50ms
+  -------         PROC          DELAY_HARDWARE_50MS
+  C:0800H         LINE#         3
+  C:0800H         LINE#         4
+  C:0803H         LINE#         5
+  C:0806H         LINE#         6
+  C:0808H         LINE#         7
+  C:080BH         LINE#         8
+  C:080EH         LINE#         9
+  C:0810H         LINE#         10
+  C:0812H         LINE#         11
+  C:0815H         LINE#         12
+  C:0817H         LINE#         13
+  -------         ENDPROC       DELAY_HARDWARE_50MS
+  -------         PROC          DELAY_HARDWARE_1S
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0818H         LINE#         15
+  C:0818H         LINE#         17
+  C:0829H         LINE#         18
+  -------         ENDPROC       DELAY_HARDWARE_1S
+  -------         PROC          MAIN
+  C:082AH         LINE#         19
+  C:082AH         LINE#         20
+  C:082AH         LINE#         21
+  C:082AH         LINE#         22
+  C:082AH         LINE#         23
+  C:082DH         LINE#         24
+  C:0830H         LINE#         25
+  C:0833H         LINE#         26
+  C:0836H         LINE#         27
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        VD6
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0038H BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=71
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\CCLaptop\Documents\COOA-PR\ATC89C51\L6-test\3rdtry.uvproj
+Project File Date:  11/30/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling 3rdtry.c...
+linking...
+Program Size: data=21.0 xdata=0 code=357
+creating hex file from "3rdtry"...
+"3rdtry" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling 3rdtry.c...
+linking...
+Program Size: data=21.0 xdata=0 code=357
+creating hex file from "3rdtry"...
+"3rdtry" - 0 Error(s), 0 Warning(s).

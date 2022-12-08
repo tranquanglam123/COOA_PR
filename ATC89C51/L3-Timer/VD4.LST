@@ -1,0 +1,41 @@
+C51 COMPILER V9.52.0.0   VD4                                                               11/09/2022 13:35:50 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE VD4
+OBJECT MODULE PLACED IN VD4.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE VD4.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <AT89X51.H>
+   2          void SetupEx0(void);
+   3          void main(void)
+   4          {   
+   5   1        SetupEx0();
+   6   1        while(1); 
+   7   1      }
+   8          void SetupEx0(void)
+   9          {       EA=0;
+  10   1              IT0=1;
+  11   1              EX0=1;
+  12   1              EA=1;
+  13   1      }   
+  14          void Ex0Isr(void)
+  15          interrupt 0
+  16          {       
+  17   1              P1_0=!P1_0;
+  18   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     17    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

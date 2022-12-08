@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+C:\Users\CCLaptop\Documents\COOA-PR\ATC89C51\L3-Timer\VD4.uvproj
+Project File Date:  11/09/2022
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling ex_int2.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?INIT?EX_INT2
+Program Size: data=26.0 xdata=0 code=726
+creating hex file from "VD5-ASM"...
+"VD5-ASM" - 0 Error(s), 1 Warning(s).

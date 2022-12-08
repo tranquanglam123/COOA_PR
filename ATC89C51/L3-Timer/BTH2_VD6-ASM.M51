@@ -1,0 +1,95 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/09/2022  13:36:00  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE VD4.obj TO BTH2_VD6-ASM
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  VD4.obj (VD4)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  BTH2_VD6-ASM (VD4)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0003H     ABSOLUTE     
+                    0006H     07FAH                  *** GAP ***
+            CODE    0800H     000CH     UNIT         ?C_C51STARTUP
+            CODE    080CH     0009H     UNIT         ?PR?SETUPEX0?VD4
+            CODE    0815H     0005H     UNIT         ?PR?MAIN?VD4
+            CODE    081AH     0003H     UNIT         ?PR?EX0ISR?VD4
+
+
+
+OVERLAY MAP OF MODULE:   BTH2_VD6-ASM (VD4)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?VD4
+
+?PR?MAIN?VD4
+  +--> ?PR?SETUPEX0?VD4
+
+
+
+SYMBOL TABLE OF MODULE:  BTH2_VD6-ASM (VD4)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        VD4
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:080CH         PUBLIC        SetupEx0
+  B:00A8H.7       PUBLIC        EA
+  B:0090H.0       PUBLIC        P1_0
+  C:081AH         PUBLIC        Ex0Isr
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/09/2022  13:36:00  PAGE 2
+
+
+  C:0815H         PUBLIC        main
+  B:00A8H.0       PUBLIC        EX0
+  B:0088H.0       PUBLIC        IT0
+  -------         PROC          MAIN
+  C:0815H         LINE#         3
+  C:0815H         LINE#         4
+  C:0815H         LINE#         5
+  C:0818H         LINE#         6
+  -------         ENDPROC       MAIN
+  -------         PROC          SETUPEX0
+  C:080CH         LINE#         8
+  C:080CH         LINE#         9
+  C:080EH         LINE#         10
+  C:0810H         LINE#         11
+  C:0812H         LINE#         12
+  C:0814H         LINE#         13
+  -------         ENDPROC       SETUPEX0
+  -------         PROC          EX0ISR
+  C:081AH         LINE#         14
+  C:081AH         LINE#         15
+  C:081AH         LINE#         17
+  C:081CH         LINE#         18
+  -------         ENDPROC       EX0ISR
+  -------         ENDMOD        VD4
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0014H BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=35
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

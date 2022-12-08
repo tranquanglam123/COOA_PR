@@ -1,0 +1,63 @@
+NHAP:
+    MOV CX,0AH
+    MOV AH,1H
+    INT 21H
+    AND AX,0FH
+    MUL CX
+    MOV BX,AX
+    MOV AH,1h
+    INT 21H
+    AND AX,0FH
+    ADD AX,BX
+    MUL CX
+    MOV BX,AX
+    MOV AH,1h
+    INT 21H
+    AND AX,0FH
+    ADD AX,BX
+    MUL CX 
+    MOV BX,AX
+    MOV AH,1h
+    INT 21H
+    AND AX,0FH
+    ADD AX,BX 
+    MOV BX,AX
+    MOV CX,2H 
+    CMP AX,3E7H
+    JLE FALSE 
+    CMP AX,270FH
+    JGE FALSE
+PRIME:
+    MOV AX,BX
+    MOV DX,0H 
+    DIV CX
+    INC CX                          
+    CMP DX,0H
+    JE  FALSE
+    CMP BX,CX
+    JL  PRIME
+    MOV DL,'T'
+    MOV AH,2H
+    INT 21H
+    MOV CL,16 
+BINARY:
+    DEC CL
+    CMP CL,0H
+    JL  EXIT
+    SHL BX,1  
+    JC  OUTPUT
+    MOV AH,2H
+    MOV DL,30h
+    INT 21h
+    JMP BINARY
+OUTPUT:
+    MOV DL,31h 
+    MOV AH,2H
+    INT 21h
+    JMP BINARY
+FALSE:
+    MOV AH,2H
+    MOV DL,'F'
+    INT 21H
+    JMP NHAP
+EXIT: RET

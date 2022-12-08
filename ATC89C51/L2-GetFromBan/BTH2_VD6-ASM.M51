@@ -1,0 +1,175 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/09/2022  13:17:30  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE BTH2-vande5.obj TO BTH2_VD6-ASM
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  BTH2-vande5.obj (BTH2_VANDE5)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL\C51\LIB\C51S.LIB (?C?UIDIV)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  BTH2_VD6-ASM (BTH2_VANDE5)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000DH     UNIT         ?DT?BTH2_VANDE5
+            DATA    0015H     0003H     UNIT         _DATA_GROUP_
+            IDATA   0018H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     008FH     UNIT         ?PR?MAIN?BTH2_VANDE5
+            CODE    088FH     008CH     UNIT         ?C_C51STARTUP
+            CODE    091BH     0055H     UNIT         ?C?LIB_CODE
+            CODE    0970H     0046H     UNIT         ?PR?_SHOW_LED?BTH2_VANDE5
+            CODE    09B6H     002FH     UNIT         ?PR?_SHIFTOUT?BTH2_VANDE5
+            CODE    09E5H     0025H     UNIT         ?PR?_DELAY_MS?BTH2_VANDE5
+            CODE    0A0AH     0014H     UNIT         ?C_INITSEG
+
+
+
+OVERLAY MAP OF MODULE:   BTH2_VD6-ASM (BTH2_VANDE5)
+
+
+SEGMENT                             DATA_GROUP 
+  +--> CALLED SEGMENT             START    LENGTH
+-------------------------------------------------
+?C_C51STARTUP                     -----    -----
+  +--> ?PR?MAIN?BTH2_VANDE5
+  +--> ?C_INITSEG
+
+?PR?MAIN?BTH2_VANDE5              0015H    0001H
+  +--> ?PR?_SHOW_LED?BTH2_VANDE5
+
+?PR?_SHOW_LED?BTH2_VANDE5         0016H    0002H
+  +--> ?PR?_SHIFTOUT?BTH2_VANDE5
+  +--> ?PR?_DELAY_MS?BTH2_VANDE5
+
+
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/09/2022  13:17:30  PAGE 2
+
+
+SYMBOL TABLE OF MODULE:  BTH2_VD6-ASM (BTH2_VANDE5)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        BTH2_VANDE5
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        main
+  D:0008H         PUBLIC        count
+  D:0089H         PUBLIC        TMOD
+  D:0088H         PUBLIC        TCON
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  C:09E5H         PUBLIC        _delay_ms
+  D:000AH         PUBLIC        led_buf
+  C:0970H         PUBLIC        _show_led
+  C:09B6H         PUBLIC        _shiftOut
+  D:0014H         PUBLIC        stt
+  -------         PROC          MAIN
+  -------         DO            
+  D:0015H         SYMBOL        i
+  -------         ENDDO         
+  C:0800H         LINE#         31
+  C:0800H         LINE#         32
+  C:0803H         LINE#         33
+  C:0806H         LINE#         34
+  C:0809H         LINE#         35
+  C:080CH         LINE#         36
+  C:080CH         LINE#         37
+  C:080FH         LINE#         38
+  C:0811H         LINE#         39
+  C:0818H         LINE#         40
+  C:0821H         LINE#         41
+  C:0825H         LINE#         42
+  C:082DH         LINE#         43
+  C:083FH         LINE#         44
+  C:084FH         LINE#         45
+  C:0851H         LINE#         46
+  C:0851H         LINE#         47
+  C:0859H         LINE#         49
+  C:0872H         LINE#         50
+  C:0872H         LINE#         51
+  C:088CH         LINE#         52
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY_MS
+  D:0007H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:09E5H         LINE#         56
+  C:09E5H         LINE#         57
+  C:09E8H         LINE#         58
+  C:09F4H         LINE#         59
+  C:09F7H         LINE#         60
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/09/2022  13:17:30  PAGE 3
+
+
+  C:09FAH         LINE#         61
+  C:09FFH         LINE#         62
+  C:0A02H         LINE#         63
+  C:0A09H         LINE#         64
+  -------         ENDPROC       _DELAY_MS
+  -------         PROC          _SHIFTOUT
+  D:0005H         SYMBOL        dt
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:09B6H         LINE#         66
+  C:09B8H         LINE#         67
+  C:09BAH         LINE#         68
+  C:09BAH         LINE#         69
+  C:09BDH         LINE#         70
+  C:09DAH         LINE#         71
+  C:09DDH         LINE#         73
+  C:09E0H         LINE#         74
+  C:09E4H         LINE#         75
+  -------         ENDPROC       _SHIFTOUT
+  -------         PROC          _SHOW_LED
+  D:0006H         SYMBOL        num
+  -------         DO            
+  D:0016H         SYMBOL        tmp
+  D:0002H         SYMBOL        i
+  -------         ENDDO         
+  C:0970H         LINE#         77
+  C:0970H         LINE#         78
+  C:0974H         LINE#         79
+  C:0976H         LINE#         80
+  C:0976H         LINE#         81
+  C:0983H         LINE#         82
+  C:0986H         LINE#         83
+  C:099AH         LINE#         84
+  C:099DH         LINE#         85
+  C:09A2H         LINE#         86
+  C:09B1H         LINE#         87
+  C:09B5H         LINE#         88
+  -------         ENDPROC       _SHOW_LED
+  -------         ENDMOD        BTH2_VANDE5
+
+  -------         MODULE        ?C?UIDIV
+  C:091BH         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 013CH BYTE (15%) *
+******************************************************************************
+
+Program Size: data=25.0 xdata=0 code=545
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

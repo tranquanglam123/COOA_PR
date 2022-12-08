@@ -1,0 +1,140 @@
+C51 COMPILER V9.52.0.0   3RDTRY                                                            11/30/2022 16:41:39 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE 3RDTRY
+OBJECT MODULE PLACED IN 3rdtry.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE 3rdtry.c BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include <regx51.h>
+   2          
+   3          
+   4          #define uchar unsigned char
+   5          #define uint unsigned int
+   6          #define ale P2_2
+   7          #define b P2_3
+   8          #define a P2_4
+   9          #define clock P2_5
+  10          #define eoc P2_6
+  11          #define start P2_7
+  12          unsigned char chuc, donvi, rdata, temp;
+  13          void delay(int x){
+  14   1        int i;
+  15   1        for(i =0; i<x;i++);
+  16   1      }
+  17          void setup(){
+  18   1        TMOD = 0x20;  //timer mod 0
+  19   1        TH1= -3; //break
+  20   1        SCON = 0x50; 
+  21   1        TR1 = 1;
+  22   1        IE = 0x90;
+  23   1      }
+  24          void serint(void) interrupt 4 using 1 {
+  25   1        if(RI){
+  26   2            rdata = SBUF;
+  27   2            RI = 0;
+  28   2            switch(rdata){
+  29   3              case('0'): {
+  30   4              //tam dung khong cho adc chay, dieu khien chon input
+  31   4              start = 0; ale = 0; eoc = 1;
+  32   4              //dia chi 74ls247 = 0, hien thi led = 0, address a,b = 0 lay cong input 0
+  33   4              P2_0 = 0;P2_1 = 0; a = 0; b= 0;
+  34   4              //cho phep adc chay
+  35   4              start = 1, ale = 1;
+  36   4              delay(500);
+  37   4              //sau khi chay xong cho dung adc
+  38   4              start = 0; ale = 0;
+  39   4              while(eoc ==0);
+  40   4              eoc = 1;
+  41   4              break;}
+  42   3              case('1'): {
+  43   4              // tam dung khong cho adc chay, dieu khien chon input
+  44   4              start = 0; ale = 0; eoc = 1;
+  45   4              // dia chi 74ls247 =01, led hien thi = 1, address a,b =01, lay cong input 1
+  46   4              P2_0 = 1;P2_1 = 0; a= 1; b= 0;
+  47   4              start = 1, ale = 1;
+  48   4              delay(500);
+  49   4              start = 0; ale = 0;
+  50   4              while(eoc ==0);
+  51   4              eoc = 1;
+  52   4              break;}
+  53   3              case('2'): {
+  54   4              start = 0; ale = 0; eoc = 1;
+  55   4              P2_0 = 0;P2_1 = 1; a =0; b = 1;
+C51 COMPILER V9.52.0.0   3RDTRY                                                            11/30/2022 16:41:39 PAGE 2   
+
+  56   4              start = 1, ale = 1;
+  57   4              delay(500);
+  58   4              start = 0; ale = 0;
+  59   4              while(eoc ==0);
+  60   4              eoc = 1;
+  61   4              break;}
+  62   3              case('3'): {
+  63   4              start = 0; ale = 0; eoc = 1;
+  64   4              P2_0 = 1;P2_1 = 1; a = 1; b=1;
+  65   4              start = 1, ale = 1;
+  66   4              delay(500);
+  67   4              start = 0; ale = 0;
+  68   4              while(eoc ==0);
+  69   4              eoc = 1;
+  70   4              break;
+  71   4              }
+  72   3        }
+  73   2      }
+  74   1      }
+  75            void main(){
+  76   1        unsigned char trans_data;
+  77   1        P2_0 = 0; P2_1 = 0;
+  78   1        a =0; b = 0;
+  79   1        setup();
+  80   1        while(1){
+  81   2        delay(1000);
+  82   2            start=0;
+  83   2            ale=0;
+  84   2            eoc=1;
+  85   2            delay(100);
+  86   2            start=1;ale=1;
+  87   2            delay(500);
+  88   2            start=0;ale=0;
+  89   2            while(eoc==0);
+  90   2            delay(100);
+  91   2            eoc=1;
+  92   2          temp = P1;
+  93   2          // chuyen doi hien thi
+  94   2          chuc = (temp/10)<<4;
+  95   2          donvi = temp%10;
+  96   2          P0 = chuc|donvi;
+  97   2          //truyen du lieu
+  98   2          trans_data = P1;
+  99   2          if(a==0 && b==0)
+ 100   2          SBUF=0;
+ 101   2          else if (a==1&&b== 0)
+ 102   2            SBUF=1;
+ 103   2          else if (a==0&&b== 1)
+ 104   2            SBUF=2;
+ 105   2          else if (a==1&&b== 1)
+ 106   2            SBUF=3;
+ 107   2          while(TI ==0);
+ 108   2          TI=0;
+ 109   2          SBUF = trans_data;
+ 110   2          while(TI ==0);
+ 111   2          TI = 0;
+ 112   2        }
+ 113   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    339    ----
+C51 COMPILER V9.52.0.0   3RDTRY                                                            11/30/2022 16:41:39 PAGE 3   
+
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
